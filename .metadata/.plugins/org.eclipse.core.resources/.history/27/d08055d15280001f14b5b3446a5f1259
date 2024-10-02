@@ -1,0 +1,32 @@
+package pkg1.restapi;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PasswordGeneratorController4 {
+	@GetMapping("/generatePasswords4")
+	public List<Character>generatePasswords(){
+		List<Character>list1=new ArrayList<>();
+		List<Character>list2=new ArrayList<>();
+		List<Character>list3=new ArrayList<>();
+		char c1;
+		char c2;
+		char c3;
+		for(int i=0;i<26;i++) {
+			c1=(char)(65+i);
+			c2=(char)(97+i);
+			list1.add(c1);
+			list2.add(c2);
+		}
+		for(int i=0;i<9;i++) {
+			c3=(char)(i);
+			list3.add(c3);
+		}
+		return list2;
+	}
+
+}

@@ -1,0 +1,31 @@
+package pkg1.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import pkg1.restapi.Pincode2Entity;
+import pkg1.restapi.Pincode2Repo;
+
+@Controller
+@RequestMapping("/pincode")
+public class Pincode2WebController {
+	@Autowired
+	Pincode2Repo p2r;
+	@GetMapping("/add2")
+	public String add2Pincode2() {
+		return "index";
+	}
+	
+	@PostMapping("/dashboard")
+	public String showDashboard(@ModelAttribute Pincode2Entity p2e, Model model) {
+		
+		return "index2";
+	}
+	
+
+}

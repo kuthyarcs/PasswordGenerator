@@ -1,0 +1,7 @@
+package pkg1.restapi;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Pincode2Repo extends JpaRepository<Pincode2Entity, Long>{
+
+}

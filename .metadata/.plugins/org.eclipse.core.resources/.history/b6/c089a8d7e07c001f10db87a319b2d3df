@@ -1,0 +1,24 @@
+package pkg1.restapi;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Pincode2Controller {
+	@Autowired
+	Pincode2Repo pincode2repo;
+	
+	public List<Pincode2Entity> getAllPincodes(){
+		return pincode2repo.findAll();
+	}
+	
+	public List<Pincode2Entity> getPincode2(@PathVariable int pin){
+		return pincode2repo.findPincode(pin);
+		
+		
+	}
+	
+}

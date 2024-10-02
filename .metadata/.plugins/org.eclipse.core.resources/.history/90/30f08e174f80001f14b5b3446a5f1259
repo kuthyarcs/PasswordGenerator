@@ -1,0 +1,7 @@
+spring.application.name=PasswordGenerator
+spring.application.name=Pincode2
+spring.datasource.url:jdbc:mysql://139.162.60.69/smvitm1
+spring.datasource.username:user1
+spring.datasource.password:Junk
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update

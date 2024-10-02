@@ -1,0 +1,32 @@
+package pkg1.restapi;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/pincode")
+public class Pincode2Controller {
+	@Autowired
+	Pincode2Repo p2r;
+	@GetMapping("/getAll")
+	public List<Pincode2Entity> getAllPincodes(){
+		return p2r.findAll();
+	}
+	@GetMapping("/get/{pin}")
+	public List<Pincode2Entity> getPincode2(@PathVariable int pin){
+		return p2r.findPincode(pin);
+	}
+	@PostMapping("/add1")
+	public Pincode2Entity addPincode2(@RequestBody Pincode2Entity p2e) {
+		return p2r.save(p2e);
+	}
+	
+	
+}
